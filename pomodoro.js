@@ -3,7 +3,8 @@ const startButton = document.getElementById('start');
 const resetButton = document.getElementById('reset');
 let currentTime = parseInt(document.getElementById('clock').innerHTML);
 window.open(startButton.addEventListener('click', startTimer));
-console.log(currentTime)
+
+//state machine to eliminate multi timer bug on multiple start clicks
 
 function countdown(mins) {
   let seconds = 60;
@@ -26,5 +27,6 @@ function countdown(mins) {
 };
 
 function startTimer() {
+  startButton.removeEventListener;
   countdown(currentTime);
-}
+};
