@@ -2,9 +2,9 @@ const pauseButton = document.getElementById('pause');
 const startButton = document.getElementById('start');
 const resetButton = document.getElementById('reset');
 let currentTime = parseInt(document.getElementById('clock').innerHTML);
-window.open(startButton.addEventListener('click', startTimer));
-
-//state machine to eliminate multi timer bug on multiple start clicks
+window.open(startButton.onclick = startTimer);
+window.open(pauseButton.disabled = true);
+window.open(resetButton.disabled = true);
 
 function countdown(mins) {
   let seconds = 60;
@@ -27,6 +27,21 @@ function countdown(mins) {
 };
 
 function startTimer() {
-  startButton.removeEventListener;
+  startButton.disabled = true;
+  paused = false;
   countdown(currentTime);
+  pauseButton.disabled = false;
+  resetButton.disabled = false;
 };
+
+function pauseTimer() {
+  pauseButton.disbled = true;
+  startButton.disabled = false;
+};
+
+function resetTimer() {
+  pauseButton.disabled = true;
+  startButton.disabled = false;
+  resetButton.disabled = true;
+};
+
