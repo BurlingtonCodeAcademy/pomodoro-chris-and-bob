@@ -2,7 +2,7 @@ const pauseButton = document.getElementById('pause');
 const startButton = document.getElementById('start');
 const resetButton = document.getElementById('reset');
 let currentTime = parseInt(document.getElementById('clock').innerHTML);
-window.open(startButton.addEventListener('click', countdown(currentTime)));
+window.open(startButton.addEventListener('click', startTimer));
 console.log(currentTime)
 
 function countdown(mins) {
@@ -26,5 +26,5 @@ function countdown(mins) {
 };
 
 function startTimer() {
-  startButton.addEventListener('click', countdown(currentTime));
+  countdown(currentTime);
 }
