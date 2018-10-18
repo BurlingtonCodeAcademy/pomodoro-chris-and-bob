@@ -1,3 +1,10 @@
+const pauseButton = document.getElementById('pause');
+const startButton = document.getElementById('start');
+const resetButton = document.getElementById('reset');
+let currentTime = parseInt(document.getElementById('clock').innerHTML);
+window.open(startButton.addEventListener('click', countdown(currentTime)));
+console.log(currentTime)
+
 function countdown(mins) {
   let seconds = 60;
   let minutes = mins;
@@ -16,4 +23,8 @@ function countdown(mins) {
     }
   }
   tick();
+};
+
+function startTimer() {
+  startButton.addEventListener('click', countdown(currentTime));
 }
