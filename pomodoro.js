@@ -1,18 +1,18 @@
 const pauseButton = document.getElementById('pause');
 const startButton = document.getElementById('start');
 const resetButton = document.getElementById('reset');
+const audio = new Audio('beethovens5th.mp3')
 let currentTime = 1500;
 let minutesNow = Math.floor(currentTime / 60);
 let secondsNow = currentTime % 60;
 let paused = false;
-console.log(currentTime)
-startButton.onclick = startTimer;
 pauseButton.disabled = true;
 resetButton.disabled = true;
+startButton.onclick = startTimer;
 pauseButton.onclick = pauseTimer;
 resetButton.onclick = resetTimer;
 
-//track time by seconds countdown takes sec, 25min = 1500sec, display in min:sec using remainder to get Mins
+//track time by seconds countdown takes sec, 25min = 1500sec, display in min:sec using remainder to get secs
 //sec = time(sec)%60 min = time(sec)/60
 function countdown(secs) {
   if (currentTime > 0) {
@@ -29,6 +29,7 @@ function countdown(secs) {
       minutes.innerHTML = String(Math.floor(currentTime / 60));
     }
   }
+  audio.play();
 };
 
 function pause() {
@@ -64,4 +65,3 @@ function resetTimer() {
   resetButton.disabled = true;
   reset();
 };
-
