@@ -20,16 +20,18 @@ function countdown(secs) {
     let minutes = document.getElementById('minutes');
     if (paused === false) {
       currentTime--;
-      if (parseInt(seconds.innerHTML) <= 10  && parseInt(seconds.innerHTML) != 0) {
+      if (parseInt(seconds.innerHTML) <= 10 && parseInt(seconds.innerHTML) != 0) {
         seconds.innerHTML = '0' + String(currentTime % 60);
       }
       else {
-      seconds.innerHTML = String(currentTime % 60);
+        seconds.innerHTML = String(currentTime % 60);
       };
       minutes.innerHTML = String(Math.floor(currentTime / 60));
     }
   }
-  audio.play();
+  if (currentTime === 0) {
+    audio.play();
+  }
 };
 
 function pause() {
