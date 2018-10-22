@@ -47,7 +47,7 @@ function reset() {
 };
 
 function startTimer() {
-  timer = setInterval(countdown, 100);
+  timer = setInterval(countdown, 1000);
   paused = false;
   startButton.disabled = true;
   pauseButton.disabled = false;
